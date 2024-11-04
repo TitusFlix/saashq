@@ -11,7 +11,8 @@
     "format": "prettier -c .",
     "format:fix": "prettier --write .",
     "test": "jest --watch",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node ./prisma/seeds/seed.ts"
