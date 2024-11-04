@@ -1,0 +1,53 @@
+{
+  "RootLayout": {
+    "title": "SaasHQ",
+    "description": "SaasHQ ni mfumo wa CRM wa chanzo huria uliotengenezwa kwa kutumia NextJS."
+  },
+  "ModuleMenu": {
+    "dashboard": "Dashibodi",
+    "crm": {
+      "title": "Mauzo",
+      "accounts": "Kampuni",
+      "opportunities": "Fursa",
+      "contacts": "Wasiliani",
+      "leads": "Viongozi"
+    },
+    "projects": "Miradi",
+    "emails": "Barua pepe",
+    "tasks": "Kazi",
+    "invoices": "Ankara",
+    "reports": "Ripoti",
+    "documents": "Hati",
+    "storage": "Hifadhi",
+    "settings": "Usimamizi"
+  },
+  "DashboardPage": {
+    "containerTitle": "Dashibodi",
+    "totalRevenue": "Mapato Jumla",
+    "containerDescription": "Karibu SaasHQ, hapa unaweza kuona taarifa muhimu kuhusu biashara yako.",
+    "expectedRevenue": "Mapato Yanayotarajiwa",
+    "activeUsers": "Watumiaji Hai",
+    "accounts": "Kampuni",
+    "opportunities": "Mikataba",
+    "contacts": "Wasiliani",
+    "leads": "Viongozi",
+    "projects": "Miradi",
+    "tasks": "Kazi",
+    "myTasks": "Kazi Zangu",
+    "invoices": "Ankara",
+    "documents": "Hati",
+    "storage": "Hifadhi"
+  },
+  "RegisterComponent": {
+    "cardTitle": "Fungua Akaunti Mpya",
+    "cardDescription": "Fungua akaunti kwa kuingia na",
+    "label": "Lugha",
+    "locale": "{locale, select, de {Kijerumani} en {Kiingereza} cz {Kicheki} uk {Kiukreni} other {Haijulikani}}"
+  },
+  "CrmModuleMenuComponent": {
+    "menuTitle": "Mauzo",
+    "cardDescription": "Fungua akaunti kwa kusajili kwa kutumia",
+    "label": "Lugha",
+    "locale": "{locale, select, de {Kijerumani} en {Kiingereza} cz {Kicheki} uk {Kiukreni} other {Haijulikani}}"
+  }
+}
