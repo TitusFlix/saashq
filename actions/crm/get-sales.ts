@@ -26,44 +26,6 @@ export const fetchSales2 = async (amt: number): Promise<SalesData[]> => {
   }
 };
 
-export const fetchSales123 = async (
-  startDate: Date,
-  endDate: Date
-): Promise<SalesData[]> => {
-  const startOfDay = new Date(startDate);
-  startOfDay.setHours(0, 0, 0, 0);
-
-  const endOfDay = new Date(endDate);
-  endOfDay.setHours(23, 59, 59, 999);
-
-  try {
-    const data = await prismadb.sales.findMany({
-      where: {
-        date1: {
-          gte: startOfDay,
-          lte: endOfDay,
-        },
-      },
-    });
-
-    // Validate and transform the data to match SalesData type
-    const validatedData = data.map((sale) => {
-      const validatedSale = salesSchema.parse({
-        ...sale,
-        date1: new Date(sale.date1), // Ensure date1 is a Date object
-        created_at: sale.created_at ? new Date(sale.created_at) : undefined,
-        updated_at: sale.updated_at ? new Date(sale.updated_at) : undefined,
-      });
-      return validatedSale;
-    });
-
-    return validatedData;
-  } catch (error) {
-    console.error('Error fetching sales data:', error);
-    throw new Error('Failed to fetch sales data');
-  }
-};
-
 export const fetchSales4 = async (startDate: Date, endDate: Date) => {
   const startOfDay = new Date(startDate);
   startOfDay.setHours(0, 0, 0, 0);

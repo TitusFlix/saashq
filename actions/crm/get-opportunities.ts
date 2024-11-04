@@ -27,7 +27,7 @@ export const getOpportunitiesByMonth = async () => {
   }
 
   const opportunitiesByMonth = opportunities.reduce(
-    (acc: Record<string, number>, opportunity) => {
+    (acc: Record<string, number>, opportunity: any) => {
       if (opportunity?.created_on) {
         const month = new Date(opportunity.created_on).toLocaleString(
           'default',
@@ -42,12 +42,10 @@ export const getOpportunitiesByMonth = async () => {
     {} satisfies Record<string, number>
   );
 
-  const chartData = Object.keys(opportunitiesByMonth).map((month) => {
-    return {
-      name: month,
-      Number: opportunitiesByMonth[month],
-    };
-  });
+  const chartData = Object.keys(opportunitiesByMonth).map((month) => ({
+    name: month,
+    Number: opportunitiesByMonth[month],
+  }));
 
   return chartData;
 };
@@ -70,7 +68,7 @@ export const getOpportunitiesByStage = async () => {
   }
 
   const opportunitiesByStage = opportunities.reduce(
-    (acc: Record<string, number>, opportunity) => {
+    (acc: Record<string, number>, opportunity: any) => {
       const stage = opportunity.assigned_sales_stage?.name;
       if (stage) {
         acc[stage] = (acc[stage] || 0) + 1;
@@ -80,12 +78,10 @@ export const getOpportunitiesByStage = async () => {
     {} satisfies Record<string, number>
   );
 
-  const chartData = Object.keys(opportunitiesByStage).map((stage) => {
-    return {
-      name: stage,
-      Number: opportunitiesByStage[stage],
-    };
-  });
+  const chartData = Object.keys(opportunitiesByStage).map((stage) => ({
+    name: stage,
+    Number: opportunitiesByStage[stage],
+  }));
 
   return chartData;
 };

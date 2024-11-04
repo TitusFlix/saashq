@@ -19,6 +19,7 @@ const SalesView = ({ branchData }: { branchData: any }) => {
     date.setMonth(date.getMonth() - 1);
     return date;
   });
+
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [branch, setBranch] = useState<Number>(0);
   const [salesData, setSalesData] = useState<any[]>([]);

@@ -36,7 +36,7 @@ export const getUsersByMonthAndYear = async (year: number) => {
   }
 
   const usersByMonth = users.reduce(
-    (acc: Record<string, number>, user) => {
+    (acc: Record<string, number>, user: any) => {
       const yearCreated = new Date(user.created_on).getFullYear();
       const month = new Date(user.created_on).toLocaleString('default', {
         month: 'long',
@@ -51,12 +51,10 @@ export const getUsersByMonthAndYear = async (year: number) => {
     {} satisfies Record<string, number>
   );
 
-  const chartData = Object.keys(usersByMonth).map((month) => {
-    return {
-      name: month,
-      Number: usersByMonth[month],
-    };
-  });
+  const chartData = Object.keys(usersByMonth).map((month) => ({
+    name: month,
+    Number: usersByMonth[month],
+  }));
 
   return chartData;
 };
@@ -74,7 +72,7 @@ export const getUsersByMonth = async () => {
   }
 
   const usersByMonth = users.reduce(
-    (acc: Record<string, number>, user) => {
+    (acc: Record<string, number>, user: any) => {
       const month = new Date(user.created_on).toLocaleString('default', {
         month: 'long',
       });
@@ -86,12 +84,10 @@ export const getUsersByMonth = async () => {
     {} satisfies Record<string, number>
   );
 
-  const chartData = Object.keys(usersByMonth).map((month) => {
-    return {
-      name: month,
-      Number: usersByMonth[month],
-    };
-  });
+  const chartData = Object.keys(usersByMonth).map((month) => ({
+    name: month,
+    Number: usersByMonth[month],
+  }));
 
   return chartData;
 };
