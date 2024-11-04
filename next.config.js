@@ -19,6 +19,32 @@ const nextConfig = {
     config.module.noParse = [require.resolve('typescript/lib/typescript.js')];
     return config;
   },
+  experimental: {
+    serverActions: true,
+  },
+  functions: {
+    maxDuration: 60,
+  },
+  serverRuntimeConfig: {
+    maxDuration: 60,
+  },
+  rewrites: async () => {
+    return {
+      beforeFiles: [
+        {
+          source: '/[locale]/workflows/:path*',
+          destination: '/api/workflows/:path*',
+          has: [
+            {
+              type: 'query',
+              key: 'maxDuration',
+              value: '60'
+            }
+          ]
+        }
+      ]
+    }
+  }
 };
 
 module.exports = withNextIntl(nextConfig);
