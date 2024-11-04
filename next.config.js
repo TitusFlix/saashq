@@ -23,28 +23,26 @@ const nextConfig = {
     serverActions: true,
   },
   functions: {
-    maxDuration: 60,
+    maxDuration: 20,
   },
   serverRuntimeConfig: {
-    maxDuration: 60,
+    maxDuration: 20,
   },
-  rewrites: async () => {
-    return {
-      beforeFiles: [
-        {
-          source: '/[locale]/workflows/:path*',
-          destination: '/api/workflows/:path*',
-          has: [
-            {
-              type: 'query',
-              key: 'maxDuration',
-              value: '60'
-            }
-          ]
-        }
-      ]
-    }
-  }
+  rewrites: async () => ({
+    beforeFiles: [
+      {
+        source: '/[locale]/workflows/:path*',
+        destination: '/api/workflows/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'maxDuration',
+            value: '60',
+          },
+        ],
+      },
+    ],
+  }),
 };
 
 module.exports = withNextIntl(nextConfig);
