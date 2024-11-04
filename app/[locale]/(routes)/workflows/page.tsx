@@ -11,7 +11,7 @@ import SuspenseLoading from '@/components/loadings/suspense';
 
 import { getDefinitionList } from '@/actions/workflows/get-definition-list';
 
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 const WorkflowsPage = async () => {
   const workflows = await getDefinitionList();

@@ -13,6 +13,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
+export const revalidate = 0;
+
 const PendingPage = async () => {
   const adminUsers: Users[] = await prismadb.users.findMany({
     where: {
