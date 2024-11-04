@@ -13,6 +13,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
+export const config = {
+  maxDuration: 20, // Maximum allowed duration in seconds for Hobby plan
+};
+
 const PendingPage = async () => {
   const adminUsers: Users[] = await prismadb.users.findMany({
     where: {
