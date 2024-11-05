@@ -1,4 +1,4 @@
-import getNextVersion from '@/actions/system/get-next-version';
+import { getNextVersion } from '@/actions/system/get-next-version';
 import Link from 'next/link';
 import React from 'react';
 

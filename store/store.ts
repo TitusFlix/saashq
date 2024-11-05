@@ -1,9 +1,7 @@
 import { create } from 'zustand';
 
-import {
-  createIsOpenSlice,
-  IsOpenSliceInterface,
-} from './slices/createIsOpenSlice';
+import type { IsOpenSliceInterface } from './slices/createIsOpenSlice';
+import { createIsOpenSlice } from './slices/createIsOpenSlice';
 
 type AppStoreInterface = IsOpenSliceInterface;
 

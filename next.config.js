@@ -19,12 +19,6 @@ const nextConfig = {
     config.module.noParse = [require.resolve('typescript/lib/typescript.js')];
     return config;
   },
-  experimental: {
-    serverActions: true,
-  },
-  functions: {
-    maxDuration: 20,
-  },
   serverRuntimeConfig: {
     maxDuration: 20,
   },

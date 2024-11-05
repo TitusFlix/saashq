@@ -24,7 +24,7 @@ const WorkflowDefinitionContextProvider: FC<Props> = ({ children }) => {
   const [config, setConfig] = useState<Record<string, any>>({});
 
   const setNewConfig = (config: Record<string, any>) => {
-    setConfig(() => config);
+    setConfig(config);
   };
 
   return (
