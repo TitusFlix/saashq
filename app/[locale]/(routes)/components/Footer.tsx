@@ -4,7 +4,8 @@ import React from 'react';
 
 const Footer = async () => {
   const nextVersion = await getNextVersion();
-  //console.log(nextVersion, "nextVersion");
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="flex h-8 w-full flex-row items-center justify-end p-5 text-xs text-gray-500">
       <div className="hidden pr-5 md:flex">
@@ -20,20 +21,7 @@ const Footer = async () => {
         <span className="mx-1 rounded-md bg-black px-1 text-white">
           {nextVersion.substring(1, 7) || process.env.NEXT_PUBLIC_NEXT_VERSION}
         </span>
-        +
-        <Link href={'https://ui.shadcn.com/'}>
-          <span className="mr-2 rounded-md">shadcnUI</span>
-        </Link>{' '}
-        hosted by:
-        <span className="text-bold underline">
-          <Link href="https://www.hetzner.com">Hetzner</Link>
-        </span>
-      </div>
-      <div className="hidden space-x-2 md:flex">
-        Supported by:
-        <Link className="pl-1 font-bold" href="https://saashq.org">
-          SaasHQ.
-        </Link>
+        <span>© {currentYear}</span>
       </div>
     </footer>
   );
